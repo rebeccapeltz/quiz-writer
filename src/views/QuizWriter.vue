@@ -2,11 +2,12 @@
   <div class="quiz-writer">
     <b-container>
       <h2>Input</h2>
-      <label for="myFile">
-        <p> Choose File or paste text </p>
-      <input type="file" id="myFile">
-      </label>
+
       <form @submit.prevent="processText">
+        <label for="myFile">
+          <p>Choose File or paste text</p>
+          <input type="file" id="myFile">
+        </label>
         <b-form-textarea
           class="input-content"
           id="textarea1"
@@ -15,20 +16,28 @@
           :rows="5"
           :max-rows="50"
         ></b-form-textarea>
-        <b-form-group label="Using sub-components:">
-      <b-form-checkbox-group id="checkboxes2" name="flavour2" v-model="type">
-        <b-form-checkbox value="orange">Orange</b-form-checkbox>
-        <b-form-checkbox value="apple">Apple</b-form-checkbox>
-        <b-form-checkbox value="pineapple">Pineapple</b-form-checkbox>
-        <b-form-checkbox value="grape">Grape</b-form-checkbox>
-      </b-form-checkbox-group>
-    </b-form-group>
+
+        <b-form-group label="Choose type of quiz question:">
+          <b-form-checkbox-group id="type" name="type" v-model="type">
+            <b-form-checkbox value="fillin">Fill in the blank</b-form-checkbox>
+            <b-form-checkbox value="multichoice">Multiple Choice</b-form-checkbox>
+            <b-form-checkbox value="shortanswer">Short Answer</b-form-checkbox>
+          </b-form-checkbox-group>
+        </b-form-group>
+        <b-form-group label="Choose catagory:">
+          <b-form-select v-model="category" class="mb-3 category-select">
+             <option :value="null">Please select an option</option>
+            <option value="definitions">Definitions</option>
+            <option value="activities">Activities</option>
+            <option value="events/dates">Events/Dates</option>
+            <option value="glossary">Glossary</option>
+          </b-form-select>
+        </b-form-group>
         <div>
           <b-button type="submit" variant="primary" size="lg">Create Quiz</b-button>
         </div>
       </form>
     </b-container>
-
   </div>
 </template>
 
@@ -43,7 +52,8 @@ export default {
       errors: [],
       text: "",
       quiz: "",
-      type:""
+      type: "",
+      category: "null"
     };
   },
   methods: {
@@ -75,14 +85,19 @@ h2 {
   border: 1px solid rgb(111, 111, 117);
 }
 .quiz-content {
-  text-align:left;
+  text-align: left;
   padding: 10px;
   margin: 2em auto;
   width: 80%;
   height: 100px;
   border-radius: 5px;
-  background-color:white;
+  background-color: white;
   border: 1px solid blue;
 }
-
+.login {
+  padding: 5px;
+}
+.category-select{
+  width: 25%
+}
 </style>
