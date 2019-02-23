@@ -26,7 +26,7 @@
         </b-form-group>
         <b-form-group label="Choose catagory:">
           <b-form-select v-model="category" class="mb-3 category-select">
-             <option :value="null">Please select an option</option>
+            <option :value="null">Please select an option</option>
             <option value="definitions">Definitions</option>
             <option value="activities">Activities</option>
             <option value="events/dates">Events/Dates</option>
@@ -59,7 +59,27 @@ export default {
   methods: {
     processText() {
       // console.log(this.text);
-      this.quiz = this.text;
+      this.quiz = [
+        {
+          question:
+            "One early example of a machine that could reproduce sets of instructions is the Jacquard Loom, invented by ____________ in 1804.\n",
+          answer: "Joseph Marie Jacquard"
+        },
+        {
+          question:
+            "One early example of a machine that could reproduce sets of instructions is the Jacquard Loom, invented by ____________ in 1804.\n",
+          choices: [
+            "Joseph Marie Jacquard",
+            "Ada Lovelace",
+            "Vannevar Bush",
+            "Charles Babbage",
+            "Lovelace"
+          ],
+          answer: "Joseph Marie Jacquard"
+        }
+      ];
+      // this.quiz = [{"test":"test"}]
+      this.$router.push({ name: "quiz", params: {"results": this.quiz}});
     }
   }
 };
@@ -97,7 +117,7 @@ h2 {
 .login {
   padding: 5px;
 }
-.category-select{
-  width: 25%
+.category-select {
+  width: 25%;
 }
 </style>

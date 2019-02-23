@@ -1,25 +1,27 @@
 <template>
   <div id="app">
-    <h1>Quiz Writer </h1>
-    <p><i class="fas fa-check"></i> <i class="fas fa-times"></i> </p>
-    
-    <div>
-      <div class="right-align login">
-        <b-form inline>
-          <label class="sr-only" for="inlineFormInputName2">User Name</label>
-          <b-input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="User Name"/>
+    <div class="right-align login">
+      <b-form inline>
+        <label class="sr-only" for="inlineFormInputName2">User Name</label>
+        <b-input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="User Name"/>
 
-          <label class="sr-only" for="inlineFormInputGroupUsername2">Password</label>
-          <b-input-group class="mb-2 mr-sm-2 mb-sm-0">
-            <b-input id="inlineFormInputGroupUsername2" placeholder="Password"/>
-          </b-input-group>
+        <label class="sr-only" for="inlineFormInputGroupUsername2">Password</label>
+        <b-input-group class="mb-2 mr-sm-2 mb-sm-0">
+          <b-input id="inlineFormInputGroupUsername2" placeholder="Password"/>
+        </b-input-group>
 
-          <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
+        <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
 
-          <b-button variant="primary">Login</b-button>
-        </b-form>
-      </div>
+        <b-button variant="primary">Login</b-button>
+      </b-form>
     </div>
+    <h1>Quizr</h1>
+
+    <p>
+      <i class="fas fa-check"></i>
+      <i class="fas fa-times"></i>
+    </p>
+
     <router-view/>
   </div>
 </template>
@@ -56,5 +58,8 @@ h1 {
 }
 .fa-times {
   color: red;
+}
+h1 {
+  text-transform: uppercase;
 }
 </style>
