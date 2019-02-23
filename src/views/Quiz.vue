@@ -2,9 +2,14 @@
   <div class="quiz">
     <b-container>
       <h2>Quiz</h2>
-      <!-- 
+
       <form @submit.prevent="gradeQuiz">
-      </form>-->
+        <ul>
+          <li v-for="(result, index) in results" :key="index">
+            <p>{{result.question}}</p>
+          </li>
+        </ul>
+      </form>
     </b-container>
   </div>
 </template>
@@ -16,12 +21,14 @@ export default {
   name: "Quiz",
   data() {
     return {
-      errors: []
+      errors: [],
+      results: null
     };
   },
 
   mounted: function() {
     console.log(this.$route.params.results);
+    this.results = this.$route.params.results;
   },
   methods: {
     gradeQuiz() {
@@ -39,6 +46,4 @@ h2 {
 .container {
   padding: 20px 0;
 }
-
-
 </style>

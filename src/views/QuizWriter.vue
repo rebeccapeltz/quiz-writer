@@ -67,19 +67,12 @@ export default {
         },
         {
           question:
-            "One early example of a machine that could reproduce sets of instructions is the Jacquard Loom, invented by ____________ in 1804.\n",
-          choices: [
-            "Joseph Marie Jacquard",
-            "Ada Lovelace",
-            "Vannevar Bush",
-            "Charles Babbage",
-            "Lovelace"
-          ],
-          answer: "Joseph Marie Jacquard"
+            "Later in the 19th Century, ____________ came up with the idea of the Difference Engine, which was a calculation device specifically designed to solve polynomial equations.",
+          answer: "Charles Babbage"
         }
       ];
       // this.quiz = [{"test":"test"}]
-      this.$router.push({ name: "quiz", params: {"results": this.quiz}});
+      this.$router.push({ name: "quiz", params: { results: this.quiz } });
     }
   }
 };

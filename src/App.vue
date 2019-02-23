@@ -37,9 +37,8 @@ export default {
   font-family: Barlow;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #0d0d0e;
-  padding-top: 60px;
   background-color: rgb(190, 15, 15);
 }
 h1 {
