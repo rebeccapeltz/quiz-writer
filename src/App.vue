@@ -15,12 +15,12 @@
         <b-button variant="primary">Login</b-button>
       </b-form>
     </div>
-    <h1>Quizr</h1>
+    <h1 >Quizr</h1>
 
-    <p>
+    <!-- <p>
       <i class="fas fa-check"></i>
       <i class="fas fa-times"></i>
-    </p>
+    </p> -->
 
     <router-view/>
   </div>
@@ -43,6 +43,9 @@ export default {
 }
 h1 {
   color: white;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
 }
 
 .right-align {
@@ -58,7 +61,5 @@ h1 {
 .fa-times {
   color: red;
 }
-h1 {
-  text-transform: uppercase;
-}
+
 </style>

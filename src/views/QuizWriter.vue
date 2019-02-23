@@ -81,7 +81,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h2 {
-  margin: 20px 0;
+  margin: 5px 0;
 }
 .container {
   padding: 20px 0;
@@ -92,7 +92,7 @@ h2 {
 }
 
 .input-content {
-  margin: 2em auto;
+  /* margin: 2em auto; */
   width: 80%;
   border-radius: 5px;
   border: 1px solid rgb(111, 111, 117);
@@ -112,5 +112,8 @@ h2 {
 }
 .category-select {
   width: 25%;
+}
+textarea {
+  margin: 0 0 ;
 }
 </style>
