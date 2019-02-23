@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <h1>Quiz Writer</h1>
+    <h1>Quiz Writer </h1>
+    <p><i class="fas fa-check"></i> <i class="fas fa-times"></i> </p>
+    
     <div>
       <div class="right-align login">
         <b-form inline>
@@ -48,5 +50,11 @@ h1 {
 }
 .login {
   padding: 5px;
+}
+.fa-check {
+  color: green;
+}
+.fa-times {
+  color: red;
 }
 </style>
