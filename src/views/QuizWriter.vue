@@ -2,6 +2,10 @@
   <div class="quiz-writer">
     <b-container>
       <h2>Input</h2>
+      <label for="myFile">
+        <p> Choose File or paste text </p>
+      <input type="file" id="myFile">
+      </label>
       <form @submit.prevent="processText">
         <b-form-textarea
           class="input-content"
@@ -11,12 +15,18 @@
           :rows="5"
           :max-rows="50"
         ></b-form-textarea>
+        <b-form-group label="Using sub-components:">
+      <b-form-checkbox-group id="checkboxes2" name="flavour2" v-model="type">
+        <b-form-checkbox value="orange">Orange</b-form-checkbox>
+        <b-form-checkbox value="apple">Apple</b-form-checkbox>
+        <b-form-checkbox value="pineapple">Pineapple</b-form-checkbox>
+        <b-form-checkbox value="grape">Grape</b-form-checkbox>
+      </b-form-checkbox-group>
+    </b-form-group>
         <div>
-          <b-button type="submit" variant="primary" size="sm">Create Quiz</b-button>
+          <b-button type="submit" variant="primary" size="lg">Create Quiz</b-button>
         </div>
       </form>
-      <h2>Output</h2>
-      <div class="quiz-content">{{quiz}}</div>
     </b-container>
 
   </div>
@@ -32,7 +42,8 @@ export default {
       results: null,
       errors: [],
       text: "",
-      quiz: ""
+      quiz: "",
+      type:""
     };
   },
   methods: {
@@ -53,7 +64,7 @@ h2 {
   padding: 20px 0;
 }
 .quiz-writer {
-  background-color: antiquewhite;
+  background-color: rgb(235, 141, 19);
   /* padding: 20px; */
 }
 
@@ -61,7 +72,7 @@ h2 {
   margin: 2em auto;
   width: 80%;
   border-radius: 5px;
-  border: 1px solid blue;
+  border: 1px solid rgb(111, 111, 117);
 }
 .quiz-content {
   text-align:left;
