@@ -63,12 +63,17 @@ export default {
 <style scoped>
 h2 {
   margin: 20px 0;
+  color: white;
+}
+p {
+  color: white;
+  font-weight: bold;
 }
 .container {
   padding: 20px 0;
 }
 .quiz {
-  background-color: rgb(235, 141, 19);
+  /* background-color: rgb(235, 141, 19); */
   height:1000px;
 }
 ul {
@@ -79,6 +84,13 @@ button.submit {
   color: white;
   font-weight: bold;
 }
-
+.fa-times {
+  color: yellow;
+  font-size: 1.5em;
+}
+.fa-check {
+  color: aqua;
+  font-size: 1.5em;
+}
 
 </style>

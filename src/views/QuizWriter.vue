@@ -82,14 +82,24 @@ export default {
 <style scoped>
 h2 {
   margin: 5px 0;
+  color: white;
 }
 .container {
   padding: 20px 0;
 }
-.quiz-writer {
-  background-color: rgb(235, 141, 19);
-  /* padding: 20px; */
+label {
+  color: white;
+  font-weight: bold;
 }
+legend {
+  color: white;
+  font-weight: bold;
+}
+ input {
+  color: white;
+  font-weight: bold;
+}
+
 
 .input-content {
   /* margin: 2em auto; */

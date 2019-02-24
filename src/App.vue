@@ -15,7 +15,7 @@
         <b-button variant="primary">Login</b-button>
       </b-form>
     </div>
-    <h1 >Quizr</h1>
+    <h1 class="brand"><a  href="">Quizr</a></h1>
 
     <!-- <p>
       <i class="fas fa-check"></i>
@@ -59,7 +59,10 @@ h1 {
   color: green;
 }
 .fa-times {
-  color: red;
+  color: lightre;
 }
-
+.brand a, .brand a:hover{
+  text-decoration: none; 
+  color: white;
+}
 </style>
