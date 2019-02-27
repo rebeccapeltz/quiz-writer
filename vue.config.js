@@ -12,7 +12,7 @@ module.exports = {
     },
     runtimeCompiler: true,
     css: {
-        sourceMap: true
+        sourceMap: false
     },
     publicPath: '',
     //build for docs folder to enable gh-pages hosting
