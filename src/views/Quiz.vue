@@ -61,8 +61,10 @@ export default {
     },
     gradeQuiz() {
       // console.log(this.answers);
-      this.answers.forEach((item, i) => {
+      // this.answers.forEach((item, i) => {
+      for (let i=0 ;i< this.answers.length; i++){
         // console.log(this.answers)
+        let item = this.answers[i];
         if (
           this.$route.params.results[i].answer.trim().toLowerCase() ===
           item.trim().toLowerCase()
@@ -71,7 +73,7 @@ export default {
         } else {
           this.grade[i] = 0;
         }
-      });
+      }
       console.log(this.grade);
     }
   }
