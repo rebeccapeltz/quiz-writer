@@ -12,7 +12,7 @@
 
         <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
 
-        <b-button variant="primary">Login</b-button>
+        <b-button >Login</b-button>
       </b-form>
     </div>
     <h1 class="brand"><a  href="">Quizr</a></h1>
@@ -39,7 +39,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #0d0d0e;
-  background-color: rgb(190, 15, 15);
+   background-color: rgb(190, 15, 15);
 }
 h1 {
   color: white;
@@ -64,5 +64,11 @@ h1 {
 .brand a, .brand a:hover{
   text-decoration: none; 
   color: white;
+}
+button {
+  background-color: black;
+}
+input {
+  height: 2rem !important;
 }
 </style>

@@ -34,7 +34,7 @@
           </b-form-select>
         </b-form-group>
         <div>
-          <b-button type="submit" variant="primary" size="lg">Create Quiz</b-button>
+          <b-button type="submit" size="lg">Create Quiz</b-button>
         </div>
       </form>
     </b-container>
@@ -83,6 +83,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.quiz-writer {
+  height: 1000px;
+}
 h2 {
   margin: 5px 0;
   color: white;
@@ -128,5 +131,8 @@ legend {
 }
 textarea {
   margin: 0 0 ;
+}
+.container {
+  padding: 0;
 }
 </style>

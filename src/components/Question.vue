@@ -12,13 +12,12 @@
 
       <i class="fas fa-check"></i>
     </div>
-    <p>graded {{answer.graded}}</p>
-    <p>correct {{answer.correct}}</p>
+    <!-- <p>graded {{answer.graded}}</p>
+    <p>correct {{answer.correct}}</p> -->
   </div>
 </template>
 
 <script>
-import "@/components/GradeIcon";
 export default {
   name: "Question",
   data() {
