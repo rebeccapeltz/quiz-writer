@@ -56,6 +56,9 @@ export default {
       category: "null"
     };
   },
+  created(){
+    console.log('hi')
+  },
   methods: {
     processText() {
       // console.log(this.text);

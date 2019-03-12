@@ -2,20 +2,10 @@
   <div class="quiz">
     <b-container>
       <h2>Quiz</h2>
-
       <form @submit.prevent="gradeQuiz">
         <ul>
           <li v-for="(result, index) in results" :key="index">
-            <p>{{index+1}}. {{result.question}}</p>
-            <p>
-              <b-form-input v-model="answers[index]" type="text" placeholder="Enter answer"/>
-            </p>
-            <div :class="theClassTimes(index)">
-              <i class="fas fa-times"></i>
-            </div>
-            <div :class="theClassCheck(index)">
-              <i class="fas fa-check"></i>
-            </div>
+            <question :question="result" :index="index"></question>
           </li>
         </ul>
         <b-button type="submit" class="submit">Submit</b-button>
@@ -26,55 +16,48 @@
 
 <script>
 // TODO: Import axios properly here.
-
+import Question from "@/components/Question";
 export default {
   name: "Quiz",
+  components: {
+    "question": Question
+  },
   data() {
     return {
       errors: [],
-      results: null,
-      answers: [],
-      grade: []
+      results: []
     };
   },
 
-  mounted: function() {
+  created: function() {
     // console.log(this.$route.params.results);
     this.results = this.$route.params.results;
+
+    //redirect to quizwriter if results are empty
+    if (!this.results || this.results.length === 0) {
+      this.$router.push("/");
+    }
   },
   methods: {
-    theClassTimes(item) {
-      if (this.grade.length > 0) {
-        if (this.grade[item] === 1) return "none"
-        else return "showit";
-      } else {
-        return "none";
-      }
-    },
-     theClassCheck(item) {
-      if (this.grade.length > 0) {
-        if (this.grade[item] === 0) return "none"
-        else return "showit";
-      } else {
-        return "none";
-      }
-    },
     gradeQuiz() {
       // console.log(this.answers);
       // this.answers.forEach((item, i) => {
-      for (let i=0 ;i< this.answers.length; i++){
+      for (let i = 0; i < this.results.length; i++) {
+        this.$children[i].gradeQuestion();
         // console.log(this.answers)
-        let item = this.answers[i];
-        if (
-          this.$route.params.results[i].answer.trim().toLowerCase() ===
-          item.trim().toLowerCase()
-        ) {
-          this.grade[i] = 1;
-        } else {
-          this.grade[i] = 0;
-        }
+        // let answer = this.answers[i];
+        // this.results[i]["graded"] = true;
+        // if (
+        //   this.results[i].answer.trim().toLowerCase() ===
+        //   answer.response.trim().toLowerCase()
+        // ) {
+        //   // answer.grade[i] = 1 //correct
+        //   this.results[i]["correct"] = true;
+        // } else {
+        //   // answer.grade[i] = 0  //incorrect
+        //   this.results[i]["correct"] = false;
+        // }
       }
-      console.log(this.grade);
     }
   }
 };
